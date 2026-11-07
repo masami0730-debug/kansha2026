@@ -1,0 +1,134 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>大感謝祭｜配送のお仕事一覧</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+:root{--orange:#F16622;--orange-deep:#C94A0E;--orange-tint:#FFF1E8;--ink:#1A1A1A;--ink-2:#4A4440;--sub:#7A706A;--line:#E9E2DC;--bg:#F4F1EE;--card:#FFFFFF;--ok:#14804A;--ok-tint:#E5F5EC;--soon:#9A6A00;--soon-tint:#FFF4D6;
+--display:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;--body:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;margin:0}
+.wrap{max-width:880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{background:var(--ink);color:#fff;border-bottom:6px solid var(--orange)}.top .wrap{padding-block:18px 16px;display:flex;gap:16px;align-items:center;justify-content:space-between}
+.eyebrow{font-family:var(--display);font-weight:700;color:var(--orange);font-size:13px;letter-spacing:.08em}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(24px,6.4vw,34px);line-height:1.25;margin:2px 0 8px}
+.how{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13.5px;color:#EDE6E0}.how b{color:#fff}
+.qr{display:none;background:#fff;border-radius:8px;padding:8px;text-align:center;color:var(--ink);font-size:11px;font-weight:700;line-height:1.3;flex:none}.qr svg{display:block;width:104px;height:104px;margin:0 auto 4px}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}.bar .wrap{padding-block:10px;display:flex;flex-direction:column;gap:8px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 13px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff}.chip:focus-visible,.btn:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.count{font-size:12.5px;color:var(--sub)}.count b{color:var(--ink)}
+main.wrap{padding-block:14px 40px}.grid{display:grid;grid-template-columns:1fr;gap:12px}@media (min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.job{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}.job.open{box-shadow:0 0 0 2px var(--ok) inset}
+.row1{display:flex;align-items:center;justify-content:space-between;gap:8px}.no{font-family:var(--display);font-weight:900;font-size:15px}
+.st{font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}.st.ok{background:var(--ok-tint);color:var(--ok)}.st.soon{background:var(--soon-tint);color:var(--soon)}
+.ttl{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.35;display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}
+.kind{font-size:12px;font-weight:700;border:1.5px solid var(--ink-2);color:var(--ink-2);border-radius:6px;padding:0 6px;line-height:1.6}
+.pay{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}.yen{font-family:var(--display);font-weight:900;font-size:30px;color:var(--orange-deep);line-height:1.1}.unit{font-size:13px;color:var(--sub)}.tbd{font-family:var(--display);font-weight:700;font-size:20px;color:var(--sub)}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:5px 10px;font-size:14px}dt{color:var(--sub);white-space:nowrap}dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.later{font-size:13px;background:var(--orange-tint);color:var(--ink-2);border-radius:8px;padding:7px 10px}
+.btn{display:block;text-align:center;text-decoration:none;background:var(--orange);color:#fff;font-family:var(--display);font-weight:900;font-size:16px;border-radius:10px;padding:12px 10px}
+.empty{text-align:center;color:var(--sub);padding:30px 0}
+.state{text-align:center;color:var(--ink-2);padding:36px 8px;font-size:15px}.state button{margin-top:12px;border:0;background:var(--ink);color:#fff;border-radius:999px;padding:10px 20px;font:inherit;font-weight:700;cursor:pointer}
+.stale{font-size:12px;color:var(--soon);background:var(--soon-tint);border-radius:8px;padding:6px 10px;margin-bottom:10px}
+.pool{margin-top:18px;background:var(--ink);color:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px}.pool h2{font-family:var(--display);font-weight:900;font-size:18px;margin:0}.pool p{margin:0;font-size:14px;color:#EDE6E0}.pool .btn{background:#fff;color:var(--ink)}
+.foot{margin-top:16px;font-size:12px;color:var(--sub);text-align:center}
+.printbtn{display:none}
+body.print{background:#fff;font-size:12px}body.print .bar,body.print .btn,body.print .pool .btn,body.print .later{display:none}
+body.print .qr{display:block}body.print .grid{grid-template-columns:1fr 1fr;gap:8px}
+body.print .job{border-radius:8px;padding:8px 10px;gap:4px;break-inside:avoid;box-shadow:none;border:1.2px solid #BBB}body.print .job.open{border:2px solid var(--ok)}
+body.print .yen{font-size:20px}body.print .ttl{font-size:14px}body.print dl{font-size:11.5px;gap:1px 8px}body.print h1{font-size:24px}
+body.print .pool{margin-top:10px;padding:10px 12px;border-radius:8px}body.print .pool h2{font-size:14px}body.print .pool p{font-size:12px}
+body.print .printbtn{display:block;position:fixed;right:16px;bottom:16px;z-index:9;background:var(--orange);color:#fff;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+@page{size:A4;margin:10mm}
+@media print{body{background:#fff}.bar,.btn,.later,.printbtn{display:none!important}.top,.pool,.job.open,.st,.later{-webkit-print-color-adjust:exact;print-color-adjust:exact}.job{break-inside:avoid}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<header class="top"><div class="wrap"><div>
+<div class="eyebrow">LALAMOVE 大感謝祭 2026</div><h1>🚚 配送のお仕事一覧</h1>
+<div class="how" id="how"></div></div>
+<div class="qr" id="qr"></div></div></header>
+<div class="bar"><div class="wrap"><div class="chips" id="chips" role="group" aria-label="絞り込み"></div><div class="count" id="count"></div></div></div>
+<main class="wrap"><div id="stale" class="stale" hidden></div><div class="grid" id="grid"><p class="state">📡 案件を読み込んでいます…</p></div>
+<section class="pool"><h2>★ ぴったりの案件がなかった方へ</h2><p>新しい定期案件が出たら、担当者からご案内します。登録だけでもOKです。</p><a class="btn" id="poolbtn" href="#">新しい案件の案内を受け取る</a></section>
+<div class="foot" id="foot"></div></main>
+<button type="button" class="printbtn" id="printbtn">🖨️ 印刷する</button>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script>
+/* ▼ 設定：gmail側ウェブアプリのURL（デプロイを管理→新バージョン、ならURLは変わらない） */
+var DATA_URL="https://script.google.com/macros/s/AKfycbzY2ZcB46XkvDsRFVrEr_mxu5o3JhgZ5zkak5dESNErwfa-Sfij_WgLuoQtWbjl8EmVJQ/exec";
+var DATA=null;var PAGE_URL=location.origin+location.pathname;var PRINT=/[?&]print=1/.test(location.search);
+var CACHE_KEY="kansha2026_jobs";
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+function icon(c){return /弁当/.test(c)?"🍱":/パン/.test(c)?"🥐":/食器/.test(c)?"🍽️":/給食/.test(c)?"🏫":/青果|野菜/.test(c)?"🥬":/個配|宅配/.test(c)?"📦":/フード/.test(c)?"🛵":/食/.test(c)?"🥡":"🚚";}
+function hm(t){return String(t).replace(/^0(\d):/,"$1:").replace(/[~～]/g,"〜");}
+function veh(v){return /冷蔵/.test(v)?"cold":/バイク/.test(v)?"bike":/軽|小型/.test(v)?"van":"";}
+var FILTERS=[
+ {id:"all",label:"すべて",fn:function(){return true;}},
+ {id:"open",label:"🟢 すぐ働ける",fn:function(j){return j.status==="募集中";}},
+ {id:"regular",label:"📅 定期",fn:function(j){return j.kind==="定期";}},
+ {id:"spot",label:"⚡ 単発",fn:function(j){return j.kind==="単発";}},
+ {id:"bike",label:"🛵 バイクOK",fn:function(j){return veh(j.vehicle)==="bike";}},
+ {id:"van",label:"🚐 軽バン",fn:function(j){return veh(j.vehicle)==="van";}},
+ {id:"cold",label:"❄️ 冷蔵車",fn:function(j){return veh(j.vehicle)==="cold";}}
+];
+var jobs=[];
+function prepare(){jobs=((DATA&&DATA.jobs)||[]).filter(function(j){return /^D-\d+$/.test(j.no)&&j.status&&j.status!=="募集終了";})
+ .sort(function(a,b){return (a.status==="募集中"?0:1)-(b.status==="募集中"?0:1)||Number(a.no.slice(2))-Number(b.no.slice(2));});}
+var cur="all";
+function card(j){
+ var time=j.start&&j.end?hm(j.start)+"〜"+hm(j.end):(j.start?hm(j.start):"");
+ var work=j.work?"（実働"+j.work.replace(/h$/i,"時間")+"）":"";
+ var place=j.from&&j.to?(j.from===j.to?j.from:j.from+" → "+j.to):(j.from||j.to);
+ var rows=[["📅 開始",j.when],["🗓 曜日",j.days],["⏰ 時間",(time+" "+work).trim()],["📍 場所",place],["🚐 車両",j.vehicle]].filter(function(x){return x[1];});
+ var ok=j.status==="募集中";
+ var h="<article class=\"job"+(ok?" open":"")+"\">";
+ h+="<div class=\"row1\"><span class=\"no\">"+esc(j.no)+"</span><span class=\"st "+(ok?"ok\">🟢 募集中":"soon\">🟡 募集予定")+"</span></div>";
+ h+="<div class=\"ttl\"><span>"+icon(j.content)+" "+esc(j.content)+"</span>"+(j.kind?"<span class=\"kind\">"+esc(j.kind)+"</span>":"")+"</div>";
+ h+="<div class=\"pay\">"+(j.pay?"<span class=\"yen\">"+esc(j.pay)+"</span><span class=\"unit\">／1回あたり</span>":"<span class=\"tbd\">報酬は後日ご案内</span>")+"</div>";
+ if(rows.length){h+="<dl>"+rows.map(function(r){return "<dt>"+r[0]+"</dt><dd>"+esc(r[1])+"</dd>";}).join("")+"</dl>";}
+ if(5-rows.length>=2){h+="<div class=\"later\">🕐 くわしい条件は決まり次第ご案内します。先にエントリーしておくと優先してご連絡します</div>";}
+ h+="<a class=\"btn\" href=\""+esc(j.url||(DATA&&DATA.formUrl)||"#")+"\">✋ この案件にエントリー</a>";
+ return h+"</article>";
+}
+function render(){
+ var f=FILTERS.filter(function(x){return x.id===cur;})[0];var list=PRINT?jobs:jobs.filter(f.fn);
+ document.getElementById("grid").innerHTML=list.length?list.map(card).join(""):"<p class=\"empty\">"+(jobs.length?"この条件の案件は今ありません。下の「★」から案内の登録ができます":"ただいま準備中です。少し時間をおいて開き直してください")+"</p>";
+ document.getElementById("count").innerHTML="<b>"+list.length+"</b> 件の案件（全 "+jobs.length+" 件・募集中が上に並びます）";
+ var cs=document.querySelectorAll(".chip");for(var i=0;i<cs.length;i++){cs[i].setAttribute("aria-pressed",cs[i].getAttribute("data-id")===cur?"true":"false");}
+}
+function init(){
+prepare();
+document.getElementById("chips").innerHTML=FILTERS.map(function(f){return "<button type=\"button\" class=\"chip\" data-id=\""+f.id+"\" aria-pressed=\"false\">"+f.label+"</button>";}).join("");
+document.getElementById("chips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;cur=b.getAttribute("data-id");render();});
+document.getElementById("how").innerHTML=PRINT?"<span>📱 右のQRをスマホで読み取ると、くわしく見られて、そのままエントリーできます</span>":"<span>① 気になる案件を探す</span><span>② <b>「エントリー」</b>をタップ</span><span>③ 約1分で入力して完了</span>";
+document.getElementById("poolbtn").href=(DATA&&(DATA.poolUrl||DATA.formUrl))||"#";
+var upd=DATA&&DATA.receivedAt?new Date(DATA.receivedAt).toLocaleString("ja-JP",{timeZone:"Asia/Tokyo",month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"}):"";
+document.getElementById("foot").innerHTML="💬 わからないことは、ブースのスタッフにお気軽にどうぞ<br>エントリーは確定ではありません。条件が合う方へ、担当者からご連絡します"+(upd?"<br>最終更新："+esc(upd):"");
+if(PRINT){document.body.classList.add("print");
+ try{var q=qrcode(0,"M");q.addData(PAGE_URL);q.make();document.getElementById("qr").innerHTML=q.createSvgTag({cellSize:3,margin:0})+"読み取って<br>エントリー";}
+ catch(e){document.getElementById("qr").textContent=PAGE_URL;}
+ document.getElementById("printbtn").addEventListener("click",function(){try{window.print();}catch(e){}});}
+render();
+}
+var loaded=false,started=false;
+function show(d,stale){DATA=d;var st=document.getElementById("stale");
+ if(stale){st.hidden=false;st.textContent="📶 電波が弱いため、前回読み込んだ内容を表示しています（最新でない場合があります）";}else{st.hidden=true;}
+ if(!started){started=true;init();}else{prepare();render();var upd=DATA&&DATA.receivedAt?new Date(DATA.receivedAt).toLocaleString("ja-JP",{timeZone:"Asia/Tokyo",month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"}):"";var f=document.getElementById("foot");f.innerHTML=f.innerHTML.replace(/<br>最終更新：.*$/,"")+(upd?"<br>最終更新："+esc(upd):"");document.getElementById("poolbtn").href=(DATA&&(DATA.poolUrl||DATA.formUrl))||"#";}}
+function fresh(d){if(!d||!Array.isArray(d.jobs))return fail();loaded=true;try{localStorage.setItem(CACHE_KEY,JSON.stringify(d));}catch(e){}show(d,false);}
+function fail(){if(loaded)return;var c=null;try{c=JSON.parse(localStorage.getItem(CACHE_KEY)||"null");}catch(e){}
+ if(c&&Array.isArray(c.jobs)){show(c,true);return;}
+ document.getElementById("grid").innerHTML="<div class=\"state\">😢 案件を読み込めませんでした<br>電波の良い場所で、もう一度お試しください<br><button type=\"button\" onclick=\"location.reload()\">もう一度読み込む</button></div>";}
+function viaJsonp(){var done=false;window.__kanshaCb=function(d){done=true;fresh(d);};
+ var s=document.createElement("script");s.src=DATA_URL+"?callback=__kanshaCb&t="+Date.now();s.onerror=function(){if(!done)fail();};document.head.appendChild(s);
+ setTimeout(function(){if(!done)fail();},10000);}
+function load(){
+ /* 前回の内容があれば先に表示（会場の電波が弱くてもすぐ見られる） */
+ try{var c=JSON.parse(localStorage.getItem(CACHE_KEY)||"null");if(c&&Array.isArray(c.jobs)){DATA=c;started=true;init();}}catch(e){}
+ /* ログイン情報を送らずに読み込む（Googleのアカウント切り替え問題を回避） */
+ fetch(DATA_URL+"?format=json&t="+Date.now(),{credentials:"omit",cache:"no-store"})
+  .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
+  .then(fresh).catch(viaJsonp);
+}
+load();
+</script></body></html>
