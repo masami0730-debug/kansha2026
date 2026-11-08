@@ -290,11 +290,12 @@ function tags(j){var t=[],s=mins(String(j.start||"").split(/[~～〜]/)[0]),h=wo
  if(/シフト/.test(j.days||""))t.push("シフト制");
  if(/冷蔵/.test(j.vehicle||""))t.push("冷蔵車が必要");
  return t.slice(0,3);}
-var SORTS=[{id:"rec",label:"おすすめ順"},{id:"hourly",label:"時給が高い順"},{id:"pay",label:"1回の報酬が高い順"}];
+var SORTS=[{id:"rec",label:"おすすめ順"},{id:"hourly",label:"時給が高い順"},{id:"pay",label:"1回の報酬が高い順"},{id:"no",label:"案件No.順"}];
 var sortBy="rec";
 function sorted(list){var a=list.slice();
  if(sortBy==="hourly")a.sort(function(x,y){var sx=(workH(x)||span(x)||9)<=1,sy=(workH(y)||span(y)||9)<=1;return (sx-sy)||(hourly(y)-hourly(x));});
  else if(sortBy==="pay")a.sort(function(x,y){return perDay(y)-perDay(x);});
+ else if(sortBy==="no")a.sort(function(x,y){return num(x.no)-num(y.no);});
  return a;}
 function card(j){
  var TBD="<span class=\"tbdv\">未定</span>";
