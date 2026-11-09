@@ -216,14 +216,6 @@ body.print .pool{box-shadow:0 0 0 1px var(--orange) inset}
 <div class="qr" id="qr"></div></div></header>
 <div class="bar"><div class="wrap"><div class="chips" id="chips" role="group" aria-label="絞り込み"></div><div class="row2"><div class="count" id="count"></div><label class="sort"><span>並び替え</span><select id="sort"></select></label></div></div></div>
 <main class="wrap"><div id="stale" class="stale" hidden></div><div class="grid" id="grid"><p class="state">📡 案件を読み込んでいます…</p></div>
-<section class="pool" id="pool">
-<div class="pool-eye">今日の案件に合わなくても大丈夫</div>
-<h2>あなたに合う<span class="hl">定期案件</span>、<br>担当者がお探しします</h2>
-<p>働ける曜日・エリア・車両・希望の報酬を登録しておくと、条件に合う案件が出たときに<b>優先してご連絡</b>します。</p>
-<ul class="pool-list"><li>約3分で登録</li><li>一度登録すれば、毎回探さなくてOK</li><li>登録は無料。応募の確定ではありません</li></ul>
-<a class="btn" id="poolbtn" href="https://docs.google.com/forms/d/e/1FAIpQLSevGfMyDUkuhqU4MgMWKV-mnXgQAqFGtS9M0_0H2_GT--A5hQ/viewform">希望条件を登録する（約3分）</a>
-<p class="pool-note">すでに<b>100名以上</b>のドライバーが登録しています。<br>以前登録した方も、条件が変わったら登録し直しOKです。</p>
-</section>
 <div class="foot" id="foot"></div></main>
 <button type="button" class="printbtn" id="printbtn">🖨️ 印刷する</button>
 <div class="cart" id="cart" hidden><div class="in"><div class="n"><b id="cartn">0</b> 件を選択中<br><button type="button" class="clear" id="cartclear">選択をすべて外す</button><span class="warn" id="cartwarn" hidden></span></div><a id="cartgo" href="#">まとめてエントリー →</a></div></div>
@@ -330,7 +322,7 @@ function card(j){
 }
 function render(){
  var f=FILTERS.filter(function(x){return x.id===cur;})[0];var list=sorted(PRINT?jobs:jobs.filter(f.fn));
- document.getElementById("grid").innerHTML=list.length?list.map(card).join(""):"<p class=\"empty\">"+(jobs.length?"この条件の案件は今ありません。いちばん下の「希望条件を登録する」から、合う案件の案内を受け取れます":"ただいま準備中です。少し時間をおいて開き直してください")+"</p>";
+ document.getElementById("grid").innerHTML=list.length?list.map(card).join(""):"<p class=\"empty\">"+(jobs.length?"この条件の案件は今ありません。ほかの条件で探すか、時間をおいてまた見てみてください（案件は随時更新しています）":"ただいま準備中です。少し時間をおいて開き直してください")+"</p>";
  document.getElementById("count").innerHTML="<b>"+list.length+"</b> 件の案件（全 "+jobs.length+" 件）"+(sortBy==="hourly"?"・1時間以内の短い案件は後ろに表示":"");
  updateCart();
  var cs=document.querySelectorAll(".chip");for(var i=0;i<cs.length;i++){cs[i].setAttribute("aria-pressed",cs[i].getAttribute("data-id")===cur?"true":"false");}
@@ -346,7 +338,7 @@ document.getElementById("sort").addEventListener("change",function(e){sortBy=e.t
 document.getElementById("how").innerHTML=PRINT?"<span>📱 右のQRをスマホで読み取ると、くわしく見られて、そのままエントリーできます</span>":"<span><i>1</i>気になる案件を<b>選ぶ</b>（いくつでもOK）</span><span><i>2</i>下の<b>まとめてエントリー</b>を押す</span><span><i>3</i>約1分で入力して完了</span>";
 
 var upd=DATA&&DATA.receivedAt?new Date(DATA.receivedAt).toLocaleString("ja-JP",{timeZone:"Asia/Tokyo",month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"}):"";
-document.getElementById("foot").innerHTML="💬 わからないことは、ブースのスタッフにお気軽にどうぞ<br>エントリーは確定ではありません。条件が合う方へ、担当者からご連絡します"+(upd?"<br>最終更新："+esc(upd):"");
+document.getElementById("foot").innerHTML="✅ エントリーは応募の確定ではありません<br>📞 条件が合う方へ、Lalamoveの担当者から順次ご連絡します<br>💬 気になる点は、そのときにお気軽にご質問ください<br>🔄 案件は随時更新しています"+(upd?"<br>最終更新："+esc(upd):"");
 if(PRINT){document.body.classList.add("print");
  try{var q=qrcode(0,"M");q.addData(PAGE_URL);q.make();document.getElementById("qr").innerHTML=q.createSvgTag({cellSize:3,margin:0})+"読み取って<br>エントリー";}
  catch(e){document.getElementById("qr").textContent=PAGE_URL;}
